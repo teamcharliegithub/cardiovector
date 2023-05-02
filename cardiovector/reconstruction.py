@@ -71,7 +71,7 @@ class MatrixReconstruction(ReconstructionBase):
         return self._nametrans(name)
 
 
-pca_channels = ['i', 'v5', 'v6', 'ii', 'iii', 'avf', 'v1', 'v2', 'v3']
+pca_channels = ['I', 'V5', 'V6', 'II', 'III', 'AVF', 'V1', 'V2', 'V3']
 
 
 class PcaReconstruction(ReconstructionBase):
@@ -131,7 +131,7 @@ def vcg_reconstruct_matrix(record, matrix, channels, nametransform=identity):
     return reconstruction.reconstruct(record)
 
 
-kors_channels = ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'i', 'ii']
+kors_channels = ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'I', 'II']
 kors = np.matrix([[-0.13, 0.05, -0.01, 0.14, 0.06, 0.54, 0.38, -0.07],  # x
                   [0.06, -0.02, -0.05, 0.06, -0.17, 0.13, -0.07, 0.93],  # y
                   [-0.43, -0.06, -0.14, -0.20, -0.11, 0.31, 0.11, -0.23]])  # z
@@ -155,7 +155,7 @@ def kors_vcg(record):
     return vcg_reconstruct_matrix(record, kors, kors_channels, nametransform=lambda x: x + '_kors')
 
 
-idt_channels = ['v1', 'v2', 'v3', 'v4', 'v5', 'v6', 'i', 'ii']
+idt_channels = ['V1', 'V2', 'V3', 'V4', 'V5', 'V6', 'I', 'II']
 idt = np.matrix([[-0.17, -0.07, 0.12, 0.23, 0.24, 0.19, 0.16, -0.01],  # x
                  [0.06, -0.02, -0.11, -0.02, 0.04, 0.05, -0.23, 0.89],  # y
                  [-0.23, -0.31, -0.25, -0.06, 0.05, 0.11, 0.02, 0.10]])  # z
